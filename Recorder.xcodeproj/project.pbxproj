@@ -28,6 +28,10 @@
 		8A63A4C9178A671E009D8D25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A63A49C178A671E009D8D25 /* CoreData.framework */; };
 		8A63A4D1178A671E009D8D25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A63A4CF178A671E009D8D25 /* InfoPlist.strings */; };
 		8A63A4D4178A671E009D8D25 /* RecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A63A4D3178A671E009D8D25 /* RecorderTests.m */; };
+		8A9E5070178B1350007AE949 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E506F178B1350007AE949 /* CoreAudio.framework */; };
+		8AB62825178A68F900D427AD /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AB62824178A68F900D427AD /* images.jpg */; };
+		8AB62827178A695400D427AD /* Lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB62826178A695400D427AD /* Lightbulb.png */; };
+		8AB62829178B123B00D427AD /* Recorder.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 8AB62828178B123B00D427AD /* Recorder.mobileprovision */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,11 @@
 		8A63A4D0178A671E009D8D25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A63A4D2178A671E009D8D25 /* RecorderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderTests.h; sourceTree = "<group>"; };
 		8A63A4D3178A671E009D8D25 /* RecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderTests.m; sourceTree = "<group>"; };
+		8A9E506E178B134B007AE949 /* Recorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Recorder.entitlements; sourceTree = "<group>"; };
+		8A9E506F178B1350007AE949 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		8AB62824178A68F900D427AD /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		8AB62826178A695400D427AD /* Lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lightbulb.png; sourceTree = "<group>"; };
+		8AB62828178B123B00D427AD /* Recorder.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Recorder.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A9E5070178B1350007AE949 /* CoreAudio.framework in Frameworks */,
 				8A63A497178A671E009D8D25 /* UIKit.framework in Frameworks */,
 				8A63A499178A671E009D8D25 /* Foundation.framework in Frameworks */,
 				8A63A49B178A671E009D8D25 /* CoreGraphics.framework in Frameworks */,
@@ -118,6 +128,7 @@
 		8A63A495178A671E009D8D25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A9E506F178B1350007AE949 /* CoreAudio.framework */,
 				8A63A496178A671E009D8D25 /* UIKit.framework */,
 				8A63A498178A671E009D8D25 /* Foundation.framework */,
 				8A63A49A178A671E009D8D25 /* CoreGraphics.framework */,
@@ -130,11 +141,15 @@
 		8A63A49E178A671E009D8D25 /* Recorder */ = {
 			isa = PBXGroup;
 			children = (
+				8A9E506E178B134B007AE949 /* Recorder.entitlements */,
 				8A63A4A7178A671E009D8D25 /* AppDelegate.h */,
 				8A63A4A8178A671E009D8D25 /* AppDelegate.m */,
 				8A63A4B0178A671E009D8D25 /* MainStoryboard_iPhone.storyboard */,
 				8A63A4B3178A671E009D8D25 /* MainStoryboard_iPad.storyboard */,
 				8A63A4B9178A671E009D8D25 /* MasterViewController.h */,
+				8AB62828178B123B00D427AD /* Recorder.mobileprovision */,
+				8AB62826178A695400D427AD /* Lightbulb.png */,
+				8AB62824178A68F900D427AD /* images.jpg */,
 				8A63A4BA178A671E009D8D25 /* MasterViewController.m */,
 				8A63A4BC178A671E009D8D25 /* DetailViewController.h */,
 				8A63A4BD178A671E009D8D25 /* DetailViewController.m */,
@@ -222,8 +237,24 @@
 		8A63A48B178A671E009D8D25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Touchium;
+				TargetAttributes = {
+					8A63A492178A671E009D8D25 = {
+						DevelopmentTeam = Z48RKT6B3T;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 8A63A48E178A671E009D8D25 /* Build configuration list for PBXProject "Recorder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -252,6 +283,9 @@
 				8A63A4AB178A671E009D8D25 /* Default.png in Resources */,
 				8A63A4AD178A671E009D8D25 /* Default@2x.png in Resources */,
 				8A63A4AF178A671E009D8D25 /* Default-568h@2x.png in Resources */,
+				8AB62829178B123B00D427AD /* Recorder.mobileprovision in Resources */,
+				8AB62825178A68F900D427AD /* images.jpg in Resources */,
+				8AB62827178A695400D427AD /* Lightbulb.png in Resources */,
 				8A63A4B2178A671E009D8D25 /* MainStoryboard_iPhone.storyboard in Resources */,
 				8A63A4B5178A671E009D8D25 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
@@ -394,7 +428,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -411,9 +445,12 @@
 		8A63A4D8178A671E009D8D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Recorder/Recorder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder/Recorder-Prefix.pch";
 				INFOPLIST_FILE = "Recorder/Recorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -422,9 +459,12 @@
 		8A63A4D9178A671E009D8D25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Recorder/Recorder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder/Recorder-Prefix.pch";
 				INFOPLIST_FILE = "Recorder/Recorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -483,6 +523,7 @@
 				8A63A4D9178A671E009D8D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A63A4DA178A671E009D8D25 /* Build configuration list for PBXNativeTarget "RecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +532,7 @@
 				8A63A4DC178A671E009D8D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
